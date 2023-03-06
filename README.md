@@ -1,5 +1,7 @@
 # QroProject
 
+--  ssh -i "mykey.pem" ubuntu@ec2-3-22-186-231.us-east-2.compute.amazonaws.com
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
 ## Development server

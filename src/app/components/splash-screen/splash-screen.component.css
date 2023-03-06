@@ -1,0 +1,49 @@
+
+.content {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash {
+  text-align: center;
+}
+
+.splash img {
+  max-width: 80%;
+  height: auto;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #333;
+  padding: 20px 0;
+}
+
+
+@media screen and (min-width: 768px) {
+  .content {
+    padding-bottom: 50px;
+  }
+
+  .footer {
+    position: fixed;
+    padding: 20px;
+    z-index: 999;
+  }
+
+  .footer .row {
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .footer .col-12 {
+    width: auto;
+  }
+}

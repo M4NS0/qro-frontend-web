@@ -1,0 +1,16 @@
+<div class="content">
+  <div *ngIf="showSplashScreen; else goHome" class="splash">
+    <img src="../../../assets/logo/qr-code.png" alt="">
+  </div>
+
+  <div class="footer d-flex justify-content-center">
+    
+        <p class="">&copy; 2023 My Website. All Rights Reserved.</p>
+
+  </div>
+</div>
+<ngx-spinner></ngx-spinner>
+<ng-template #goHome>
+  <a routerLink="/login"></a>
+  <router-outlet></router-outlet>
+</ng-template>
