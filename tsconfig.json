@@ -3,6 +3,10 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@ngx-translate/core": ["node_modules/@ngx-translate/core"],
+      "@ngx-translate/http-loader": ["node_modules/@ngx-translate/http-loader"]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,

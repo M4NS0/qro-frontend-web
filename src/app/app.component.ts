@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingGuard } from './guards/loading.guard';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'qro-project';
+  public progress: number = 0;
+  showSplashScreen = true;
+
+  constructor(private loadingGuard: LoadingGuard) {}
+
+  ngOnInit() {
+  
+    this.loadingGuard.canActivate().then(() => {
+      this.showSplashScreen = false;
+    });
+
+    const browserLanguage = navigator.language;
+    console.log(browserLanguage);
+  }
+
+
+
 }
