@@ -47,23 +47,6 @@
     width: 100%;
   }
 
-  .slide-up {
-    animation-name: slide-up;
-    animation-duration: 0.8s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes slide-up {
-    from {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-  }
 
 
   

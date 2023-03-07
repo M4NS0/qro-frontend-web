@@ -12,7 +12,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { LanguageSwitcherComponent } from './components/language-switcher/language-switcher.component'; 
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -25,7 +24,6 @@ export function createTranslateLoader(http: HttpClient) {
     SplashScreenComponent,
     LoginComponent,
     NavbarComponent,
-    LanguageSwitcherComponent
   ],
   imports: [
     BrowserModule,

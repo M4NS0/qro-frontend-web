@@ -1,5 +1,12 @@
 {
-    "SPLASH-SCREEN": {
-        "SLOGAN": "Melhore seus códigos QR"
+    "splash-screen": {
+        "slogan": "Melhore seus códigos QR"
+    },
+    "login": {
+        "title": "Bem vindo ao QRO",
+        "email": "Email",
+        "email-placeholder": "Digite seu email",
+        "password": "Senha",
+        "password-placeholder": "Digite sua senha"
     }
 }

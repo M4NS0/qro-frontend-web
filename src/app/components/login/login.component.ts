@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -12,25 +13,25 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   error!: string;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) {}
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, translateService: TranslateService) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
 
   onSubmit() {
-    const username = this.loginForm.value.username;
+    const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
 
-    this.authService.login(username, password).subscribe(
+    this.authService.login(email, password).subscribe(
       data => {
         // login successful redirect to
       },
       error => {
-        this.error = "Invalid username or password";
+        this.error = "Invalid email or password";
       }
     );
   }
