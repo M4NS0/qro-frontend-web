@@ -7,6 +7,8 @@
         "email": "Email",
         "email-placeholder": "Enter your email",
         "password": "Password",
-        "password-placeholder": "Enter your password"
+        "password-placeholder": "Enter your password",
+        "invalid-credentials": "Invalid email or password"
+
     }
 }

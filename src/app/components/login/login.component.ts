@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,10 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   error!: string;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, translateService: TranslateService) {}
+  constructor(private formBuilder: FormBuilder, 
+              private authService: AuthService, 
+              translateService: TranslateService,
+              private toastr: ToastrService) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -31,7 +35,7 @@ export class LoginComponent implements OnInit {
         // login successful redirect to
       },
       error => {
-        this.error = "Invalid email or password";
+        this.toastr.error('Hello, World!', 'Toastr fun!');
       }
     );
   }
