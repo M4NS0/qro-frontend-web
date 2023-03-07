@@ -17,16 +17,23 @@ export class SplashScreenComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.translate.setDefaultLang('en-US');
-    this.translate.use('en-US');
+    const browserLanguage = navigator.language;
 
+    this.translate.setDefaultLang('en-US');
+    if (browserLanguage === 'en-US') {
+      this.translate.use('en-US');
+    } else {
+      this.translate.use('pt-BR');
+    }
+    
+    
     const interval = setInterval(() => {
-      this.progress += 10;
+      this.progress += 5;
       if (this.progress >= 100) {
         clearInterval(interval);
         this.showSplashScreen = false;
       }
-    }, 500);
+    }, 100);
   }
 
 

@@ -18,8 +18,7 @@ export class AppComponent {
       this.showSplashScreen = false;
     });
 
-    const browserLanguage = navigator.language;
-    console.log(browserLanguage);
+    
   }
 
 
