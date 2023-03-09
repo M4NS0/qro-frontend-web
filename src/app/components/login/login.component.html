@@ -1,21 +1,21 @@
-<div class="container login-card">
+<div class="container login-card slide-in">
   <mat-card>
-
     <div class="text-end mt-4 mb-5">
       <app-language-switcher (switchChange)="onSwitchChange($event)"></app-language-switcher>
     </div>
 
-    <mat-card-title class="text-center mb-4">{{ 'login.title' | translate}}</mat-card-title>
+    <mat-card-title class="text-center mb-4">{{ 'login.title' | translate }}</mat-card-title>
 
     <mat-card-content>
-      <form>
+      <form (submit)="onSubmit()">
         <mat-form-field class="mat-form-field">
-          <mat-label>{{'login.email' |translate}}</mat-label>
+          <mat-label>{{'login.email' | translate }}</mat-label>
           <input matInput type="email" [(ngModel)]="email" name="email" required>
           <mat-icon matSuffix>email</mat-icon>
         </mat-form-field>
+
         <mat-form-field>
-          <mat-label>{{'login.password' |translate}}</mat-label>
+          <mat-label>{{'login.password' | translate }}</mat-label>
           <input matInput type="password" [(ngModel)]="password" name="password" required>
           <mat-icon matSuffix>lock</mat-icon>
         </mat-form-field>
@@ -25,7 +25,7 @@
       <hr class="my-5">
 
       <div class="d-flex flex-column text-decoration-underline">
-        <mat-label class="mb-2">{{'login.forgot-password' |translate}}</mat-label>
+        <mat-label class="mb-2">{{'login.forgot-password' | translate }}</mat-label>
         <mat-label>{{'login.not-registered' |translate}}</mat-label>
       </div>
 

@@ -1,20 +1,20 @@
 .slide-in {
-    animation-name: slide-in;
-    animation-duration: 0.8s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
+  animation-name: slide-in;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 
 @keyframes slide-in {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
 
-    to {
-        transform: translateX(0);
-        opacity: 100;
-    }
+  to {
+    transform: translateX(0);
+    opacity: 100;
+  }
 }
 
 .mat-mdc-form-field {
@@ -39,31 +39,39 @@
 }
 
 mat-card {
-    max-width: 400px;
-    margin: auto;
-    margin-top: auto;
-    padding: 16px;
-  }
-  form {
+  max-width: 400px;
+  margin: auto;
+  margin-top: auto;
+  padding: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  margin-top: 16px;
+}
+
+button {
+  margin-top: 24px;
+}
+
+/* @medias */
+
+@media (max-width: 600px) {
+  .login-card {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
-  mat-form-field {
-    margin-top: 16px;
-  }
-  button {
-    margin-top: 24px;
-  }
+}
 
-  /* @medias */
-
-  @media (max-width: 600px) {
-    .login-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-    }
+@media (min-width: 600px) {
+  .login-card {
+    margin-top: 100px;
   }
-  
+}

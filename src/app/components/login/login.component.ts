@@ -47,12 +47,18 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
+    console.log('onsubmit');
+    
 
     this.authService.login(email, password).subscribe(
       data => {
         // login successful redirect to
+        console.log('success');
+        
       },
       error => {
+        console.log('error');
+        
         this.showToastr();
       }
     );
