@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -9,6 +9,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
+  encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('flyInOut', [
       transition('void => *', [
@@ -25,6 +26,11 @@ export class LoginComponent implements OnInit {
 
   loginForm!: UntypedFormGroup;
   error!: string;
+  password! : string;
+  email! : string;
+
+  currentLanguage: string = 'pt-BR';
+
 
   constructor(private formBuilder: UntypedFormBuilder, 
               private authService: AuthService, 
@@ -56,4 +62,9 @@ export class LoginComponent implements OnInit {
       this.toastr.error(message);
   }
 
+  onSwitchChange(languageSwitch: boolean) {
+    this.currentLanguage = languageSwitch ? 'pt-BR' : 'en-US';
+    this.translate.use(this.currentLanguage);
+    
+  }
 }

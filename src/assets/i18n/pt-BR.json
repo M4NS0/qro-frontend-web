@@ -8,6 +8,9 @@
         "email-placeholder": "Digite seu email",
         "password": "Senha",
         "password-placeholder": "Digite sua senha",
-        "invalid-credentials": "Email ou senha inválidos"
+        "invalid-credentials": "Email ou senha inválidos",
+        "button-text": "Acessar",
+        "forgot-password": "Esqueceu sua senha?",
+        "not-registered": "Ainda não cadastrado?"
     }
 }

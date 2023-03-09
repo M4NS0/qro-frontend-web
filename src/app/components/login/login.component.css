@@ -16,3 +16,54 @@
         opacity: 100;
     }
 }
+
+.mat-mdc-form-field {
+  margin: 0px !important;
+}
+
+.mat-mdc-card-title {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.mat-mdc-raised-button .mat-mdc-button-persistent-ripple {
+  background-color: #EB8F05 !important;
+}
+
+.mat-mdc-raised-button.mat-mdc-button-base {
+  margin: 0px !important;
+}
+
+.mdc-button__label {
+  color: white !important;
+  font-weight: bold !important;
+}
+
+mat-card {
+    max-width: 400px;
+    margin: auto;
+    margin-top: auto;
+    padding: 16px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  mat-form-field {
+    margin-top: 16px;
+  }
+  button {
+    margin-top: 24px;
+  }
+
+  /* @medias */
+
+  @media (max-width: 600px) {
+    .login-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+  

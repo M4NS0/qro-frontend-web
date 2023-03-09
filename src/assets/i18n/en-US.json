@@ -8,7 +8,10 @@
         "email-placeholder": "Enter your email",
         "password": "Password",
         "password-placeholder": "Enter your password",
-        "invalid-credentials": "Invalid email or password"
-
+        "invalid-credentials": "Invalid email or password",
+        "button-text": "Login",
+        "forgot-password": "Forgot your password?",
+        "not-registered": "Not registered?"
+        
     }
 }
