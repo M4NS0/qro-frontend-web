@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
-import { ToastrService } from 'ngx-toastr';
+import { IndividualConfig, ToastrService } from 'ngx-toastr';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
@@ -47,25 +47,23 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
-    console.log('onsubmit');
-    
 
     this.authService.login(email, password).subscribe(
       data => {
         // login successful redirect to
-        console.log('success');
-        
       },
       error => {
-        console.log('error');
-        
         this.showToastr();
       }
     );
   }
   showToastr() {
+    const toastrConfig: Partial<IndividualConfig> = {
+      positionClass: 'toast-bottom-center'
+    };
+
     var message = this.translate.instant('login.invalid-credentials')
-      this.toastr.error(message);
+      this.toastr.error(message,"",toastrConfig);
   }
 
   onSwitchChange(languageSwitch: boolean) {
