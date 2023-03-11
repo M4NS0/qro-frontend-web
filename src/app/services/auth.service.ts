@@ -1,31 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private BASE_URL = 'http://localhost:8080/api';
-  private LOGIN_URL = `${this.BASE_URL}/login`;
+  private BASE_URL = 'http://localhost:8080/auth';
+  private TOKEN_KEY = 'jwtToken';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  login(username: string, password: string): Observable<boolean> {
-    return this.http.post<{token: string}>(this.LOGIN_URL, {username, password}).pipe(
-      map(result => {
-        localStorage.setItem('access_token', result.token);
-        return true;
-      })
-    );
+  login(user: User): Observable<any> {
+    const url = `${this.BASE_URL}/login`;
+    return this.http.post(url, user);
   }
 
-  logout() {
-    localStorage.removeItem('access_token');
+  saveToken(token: string): void {
+    localStorage.setItem(this.TOKEN_KEY, token);
   }
 
-  public get loggedIn(): boolean {
-    return localStorage.getItem('access_token') !== null;
+  getToken(): string | null {
+    return localStorage.getItem(this.TOKEN_KEY);
+  }
+
+  removeToken(): void {
+    localStorage.removeItem(this.TOKEN_KEY);
   }
 }

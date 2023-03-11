@@ -7,19 +7,25 @@
     <mat-card-title class="text-center mb-4">{{ 'login.title' | translate }}</mat-card-title>
 
     <mat-card-content>
-      <form (submit)="onSubmit()">
+      <form [formGroup]="loginForm">
         <mat-form-field class="mat-form-field">
-          <mat-label>{{'login.email' | translate }}</mat-label>
-          <input matInput type="email" [(ngModel)]="email" name="email" required>
-          <mat-icon matSuffix>email</mat-icon>
+          <mat-label>{{'login.username' | translate }}</mat-label>
+          <input matInput type="username" formControlName="username" name="username" required>
+          <mat-icon matSuffix>person</mat-icon>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>{{'login.password' | translate }}</mat-label>
-          <input matInput type="password" [(ngModel)]="password" name="password" required>
+          <input matInput type="password" formControlName="password" name="password" required>
           <mat-icon matSuffix>lock</mat-icon>
         </mat-form-field>
-        <button mat-raised-button>{{'login.button-text' |translate}}</button>
+        
+        <button mat-raised-button type="submit"
+        [style.margin-top.px]="20"
+        [style.filter]="this.loginForm.valid ? 'none' : 'saturate(0%)'" 
+        [style.opacity]="this.loginForm.valid ? '1' : '0.5'"
+        [disabled]="loginForm.invalid" (click)="onSubmit()"
+        >{{'login.button-text' |translate}}</button>
       </form>
 
       <hr class="my-5">

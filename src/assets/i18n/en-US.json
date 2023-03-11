@@ -6,6 +6,7 @@
         "title": "Welcome to QRO",
         "email": "Email",
         "email-placeholder": "Enter your email",
+        "username": "Username",
         "password": "Password",
         "password-placeholder": "Enter your password",
         "invalid-credentials": "Invalid email or password",

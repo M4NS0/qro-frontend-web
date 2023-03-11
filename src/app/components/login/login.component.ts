@@ -1,9 +1,10 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormGroup, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IndividualConfig, ToastrService } from 'ngx-toastr';
 import { animate, style, transition, trigger } from '@angular/animations';
+
 
 @Component({
   selector: 'app-login',
@@ -24,51 +25,54 @@ import { animate, style, transition, trigger } from '@angular/animations';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm!: UntypedFormGroup;
+  loginForm!: FormGroup;
   error!: string;
-  password! : string;
-  email! : string;
+  password: string = "";
+  username: string = "";
 
   currentLanguage: string = 'pt-BR';
 
 
-  constructor(private formBuilder: UntypedFormBuilder, 
-              private authService: AuthService, 
-              private translate: TranslateService,
-              private toastr: ToastrService) {}
+  constructor(private formBuilder: UntypedFormBuilder,
+    private authService: AuthService,
+    private translate: TranslateService,
+    private toastr: ToastrService) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
+      username: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
 
   onSubmit() {
-    const email = this.loginForm.value.email;
-    const password = this.loginForm.value.password;
-
-    this.authService.login(email, password).subscribe(
-      data => {
-        // login successful redirect to
-      },
-      error => {
-        this.showToastr();
-      }
-    );
+    if (this.loginForm.valid) {
+      this.username = this.loginForm.get('username')?.value;
+      this.password = this.loginForm.get('password')?.value;
+      this.authService.login({ userName: this.username, password: this.password }).subscribe(
+        (data) => {
+          this.authService.saveToken(data.token);
+          //redirect to guarded page
+        },
+        (error) => {
+          this.showToastr();
+        }
+      );
+    }
   }
+
   showToastr() {
     const toastrConfig: Partial<IndividualConfig> = {
       positionClass: 'toast-bottom-center'
     };
 
     var message = this.translate.instant('login.invalid-credentials')
-      this.toastr.error(message,"",toastrConfig);
+    this.toastr.error(message, "", toastrConfig);
   }
 
   onSwitchChange(languageSwitch: boolean) {
     this.currentLanguage = languageSwitch ? 'pt-BR' : 'en-US';
     this.translate.use(this.currentLanguage);
-    
+
   }
 }
