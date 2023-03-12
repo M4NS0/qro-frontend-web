@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IndividualConfig, ToastrService } from 'ngx-toastr';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -36,9 +37,14 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: UntypedFormBuilder,
     private authService: AuthService,
     private translate: TranslateService,
+    private router: Router,
     private toastr: ToastrService) { }
 
   ngOnInit() {
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/home']);
+    } 
+    
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -52,7 +58,7 @@ export class LoginComponent implements OnInit {
       this.authService.login({ userName: this.username, password: this.password }).subscribe(
         (data) => {
           this.authService.saveToken(data.token);
-          //redirect to guarded page
+          this.router.navigate(['/home']);
         },
         (error) => {
           this.showToastr();

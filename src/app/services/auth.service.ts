@@ -8,7 +8,7 @@ import { User } from '../models/user';
 })
 export class AuthService {
   private BASE_URL = 'http://localhost:8080/auth';
-  private TOKEN_KEY = 'jwtToken';
+  private JWT_TOKEN = 'jwtToken';
 
   constructor(private http: HttpClient) { }
 
@@ -18,14 +18,27 @@ export class AuthService {
   }
 
   saveToken(token: string): void {
-    localStorage.setItem(this.TOKEN_KEY, token);
+    localStorage.setItem(this.JWT_TOKEN, token);
   }
 
   getToken(): string | null {
-    return localStorage.getItem(this.TOKEN_KEY);
+    return localStorage.getItem(this.JWT_TOKEN);
   }
 
   removeToken(): void {
-    localStorage.removeItem(this.TOKEN_KEY);
+    localStorage.removeItem(this.JWT_TOKEN);
   }
+
+  getAuthStatus(): boolean {
+    return !!this.getToken();
+  }
+
+  isLoggedIn(): boolean {
+    return !!this.getToken();
+  }
+
+  logout(): void {
+    localStorage.removeItem(this.JWT_TOKEN);
+  }
+  
 }

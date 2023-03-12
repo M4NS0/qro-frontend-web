@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthGuard } from './guards/auth.guard';
 import { LoadingGuard } from './guards/loading.guard';
 
 @Component({

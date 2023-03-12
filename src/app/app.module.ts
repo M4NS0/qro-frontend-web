@@ -25,6 +25,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { LanguageSwitcherComponent } from './components/language-switcher/language-switcher.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -38,7 +39,9 @@ export function createTranslateLoader(http: HttpClient) {
     LoginComponent,
     NavbarComponent,
     LanguageSwitcherComponent,
+    HomeComponent,
   ],
+  exports: [HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
