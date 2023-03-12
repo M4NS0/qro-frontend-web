@@ -1,1 +1,2 @@
-<app-navbar></app-navbar>
+<app-navbar (currentLanguageEvent)="switchLanguage($event)"></app-navbar>
+<app-tab [currentLanguage]="currentLanguage"></app-tab>

@@ -13,5 +13,10 @@
         "button-text": "Acessar",
         "forgot-password": "Esqueceu sua senha?",
         "not-registered": "Ainda não cadastrado?"
+    },
+    "tab": {
+        "create": "Criar",
+        "dashboard": "Painel",
+        "config": "Configurações"
     }
 }

@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: UntypedFormBuilder,
     private authService: AuthService,
-    private translate: TranslateService,
+    private translateService: TranslateService,
     private router: Router,
     private toastr: ToastrService,
     private spinner: NgxSpinnerService) { }
@@ -81,13 +81,12 @@ export class LoginComponent implements OnInit {
       positionClass: 'toast-bottom-center'
     };
 
-    var message = this.translate.instant('login.invalid-credentials')
+    var message = this.translateService.instant('login.invalid-credentials')
     this.toastr.error(message, "", toastrConfig);
   }
 
   onSwitchChange(languageSwitch: boolean) {
     this.currentLanguage = languageSwitch ? 'pt-BR' : 'en-US';
-    this.translate.use(this.currentLanguage);
-
+    this.translateService.use(this.currentLanguage);
   }
 }

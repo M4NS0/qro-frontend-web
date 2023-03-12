@@ -14,5 +14,11 @@
         "forgot-password": "Forgot your password?",
         "not-registered": "Not registered?"
         
+    },
+    "tab": {
+        "create": "Create",
+        "dashboard": "Dashboard",
+        "config": "Configurations"
     }
+
 }

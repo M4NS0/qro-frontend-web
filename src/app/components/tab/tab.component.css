@@ -1,0 +1,14 @@
+.mdc-tab-indicator .mdc-tab-indicator__content {
+    border-color: #FFAE00 !important;
+}
+
+.mat-icon {
+    color: #FFAE00 !important;
+}
+
+.mdc-tab__ripple::before {
+    background-color: #424242 !important;
+}
+
+
+

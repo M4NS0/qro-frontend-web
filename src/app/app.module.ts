@@ -17,17 +17,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
-import { NgxSpinnerModule } from 'ngx-spinner';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTabsModule } from '@angular/material/tabs';
 
+
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { AppComponent } from './app.component';
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 import { LoginComponent } from './components/login/login.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { LanguageSwitcherComponent } from './components/language-switcher/language-switcher.component';
 import { HomeComponent } from './pages/home/home.component';
-
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { TabComponent } from './components/tab/tab.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -38,9 +41,10 @@ export function createTranslateLoader(http: HttpClient) {
     AppComponent,
     SplashScreenComponent,
     LoginComponent,
-    NavbarComponent,
     LanguageSwitcherComponent,
     HomeComponent,
+    NavbarComponent,
+    TabComponent,
   ],
   exports: [HomeComponent],
   imports: [
@@ -65,6 +69,8 @@ export function createTranslateLoader(http: HttpClient) {
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
+    MatToolbarModule,
+    MatTabsModule,
     CommonModule,
     FormsModule,
   ],

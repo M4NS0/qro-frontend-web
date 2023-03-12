@@ -1,0 +1,42 @@
+.mat-toolbar {
+    background-color: #424242;
+    box-shadow: inset 0 -5px 5px -5px rgba(0, 0, 0, 0.336);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.left-side {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+
+}
+
+.right-side {
+    margin-left: auto;
+    align-self: flex-end
+}
+
+.brand {
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+mat-icon {
+    color: white;
+
+}
+
+.toggle-adjustment {
+    transform: translateY(11px);
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}

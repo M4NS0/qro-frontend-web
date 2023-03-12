@@ -1,3 +1,17 @@
-<div class="text-end">
-    <app-language-switcher></app-language-switcher>
-</div>
+<mat-toolbar>
+    <div class="left-side">
+        <img src="../../../assets/logo/qr-code-mobile.png" alt="logo" class="logo">
+    </div>
+    <div class="right-side ">
+
+        <div class="d-inline-flex align-items-center">
+            <app-language-switcher class="toggle-adjustment"
+                (switchChangeEvent)="onSwitchChange($event)"></app-language-switcher>
+            <button mat-icon-button>
+                <mat-icon>account_circle</mat-icon>
+            </button>
+        </div>
+
+
+    </div>
+</mat-toolbar>
