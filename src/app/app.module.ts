@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 import { AppComponent } from './app.component';
@@ -44,6 +45,7 @@ export function createTranslateLoader(http: HttpClient) {
   exports: [HomeComponent],
   imports: [
     BrowserModule,
+    NgxSpinnerModule,
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({

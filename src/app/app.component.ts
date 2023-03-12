@@ -14,7 +14,6 @@ export class AppComponent {
   constructor(private loadingGuard: LoadingGuard) {}
 
   ngOnInit() {
-  
     this.loadingGuard.canActivate().then(() => {
       this.showSplashScreen = false;
     });

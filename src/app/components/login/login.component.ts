@@ -5,7 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { IndividualConfig, ToastrService } from 'ngx-toastr';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Router } from '@angular/router';
-
+import { NgxSpinnerService } from 'ngx-spinner';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit {
   error!: string;
   password: string = "";
   username: string = "";
+  isLoading = false;
 
   currentLanguage: string = 'pt-BR';
 
@@ -38,13 +40,14 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private translate: TranslateService,
     private router: Router,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['/home']);
     } 
-    
+
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -57,8 +60,14 @@ export class LoginComponent implements OnInit {
       this.password = this.loginForm.get('password')?.value;
       this.authService.login({ userName: this.username, password: this.password }).subscribe(
         (data) => {
+          this.isLoading = true;
+          this.spinner.show();
           this.authService.saveToken(data.token);
-          this.router.navigate(['/home']);
+          interval(3000).subscribe(() => {
+            this.isLoading = false;
+            this.spinner.hide();
+            this.router.navigate(['/home']);
+          });
         },
         (error) => {
           this.showToastr();

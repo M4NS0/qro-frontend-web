@@ -21,10 +21,12 @@
         </mat-form-field>
         
         <button mat-raised-button type="submit"
-        [style.filter]="this.loginForm.valid ? 'none' : 'saturate(0%)'" 
-        [style.opacity]="this.loginForm.valid ? '1' : '0.5'"
-        [disabled]="loginForm.invalid" (click)="onSubmit()"
-        >{{'login.button-text' |translate}}</button>
+        [style.filter]="this.loginForm.valid && !isLoading ? 'none' : 'saturate(0%)'" 
+        [style.opacity]="this.loginForm.valid && !isLoading ? '1' : '0.5'"
+        [disabled]="loginForm.invalid || isLoading" (click)="onSubmit()"
+        >{{'login.button-text' |translate }} 
+        <span *ngIf="isLoading" class="spinner-border spinner-border-sm pr-3"></span>
+      </button>
       </form>
 
       <hr class="my-5">
