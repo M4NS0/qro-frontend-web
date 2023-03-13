@@ -2,25 +2,44 @@
     <mat-tab>
         <ng-template mat-tab-label>
             <mat-icon matSuffix>create</mat-icon>
-
         </ng-template>
-        <div class="container text-center mt-4">{{'tab.create' | translate}}
-   </div>  </mat-tab>
+        <div class="">
+            <div class="title text-center my-5">{{'tab.create' | translate}} </div>
+            <div class="card m-5">
+                <div class="card-body">
+                    This is some text within a card body.
+                </div>
+            </div>
+        </div>
 
-    <mat-tab>
+    </mat-tab>
+    <mat-tab> 
         <ng-template mat-tab-label>
             <mat-icon matSuffix>dashboard</mat-icon>
-
         </ng-template>
-        <div class="container text-center mt-4">{{'tab.dashboard' | translate}} </div>
-    </mat-tab>
 
+        <div class="">
+            <div class="title text-center my-5">{{'tab.dashboard' | translate}} </div>
+            <div class="card m-5">
+                <div class="card-body">
+                    <app-gen-form></app-gen-form>
+                </div>
+            </div>
+        </div>
+
+    </mat-tab>
     <mat-tab>
         <ng-template mat-tab-label>
             <mat-icon matSuffix>settings</mat-icon>
-
         </ng-template>
+        <div class="">
+            <div class="title text-center my-5">{{'tab.config' | translate}}</div>
+            <div class="card m-5">
+                <div class="card-body">
+                    This is some text within a card body.
+                </div>
+            </div>
+        </div>
 
-        <div class="container text-center mt-4">{{'tab.config' | translate}}
-   </div>  </mat-tab>
+    </mat-tab>
 </mat-tab-group>

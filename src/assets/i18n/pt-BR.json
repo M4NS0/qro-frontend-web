@@ -15,8 +15,8 @@
         "not-registered": "Ainda não cadastrado?"
     },
     "tab": {
-        "create": "Criar",
-        "dashboard": "Painel",
+        "create": "Criar código QR",
+        "dashboard": "Painel de Estatísticas",
         "config": "Configurações"
     }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
+import jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +10,32 @@ export class LoadingGuard implements CanActivate {
 
   canActivate(): Promise<boolean> {
     return new Promise((resolve, reject) => {
-      // Show the splash screen
       this.router.navigate(['splash-screen']);
+      this.checkTokenExpiration();
 
-      // Simulate app loading for 3 seconds
       setTimeout(() => {
-        // Hide the splash screen and allow access to the requested route
         this.router.navigate(['login']);
         resolve(true);
       }, 3000);
     });
   }
+
+  checkTokenExpiration() {
+
+    const token = localStorage.getItem('jwtToken');
+    if (token) {
+      const decodedToken = jwt_decode(token) as DecodedToken;
+      console.log(decodedToken.exp + " -- " + Date.now() / 1000);
+      
+      if (decodedToken.exp < Date.now() / 1000) {
+        localStorage.removeItem('jwtToken');
+      }
+    }
+  }
+}
+
+interface DecodedToken {
+  sub: string;
+  exp: number;
+  iat: number;
 }

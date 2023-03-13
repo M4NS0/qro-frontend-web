@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { LoadingGuard } from './guards/loading.guard';
-import jwt_decode from 'jwt-decode';
 
 
 @Component({
@@ -21,22 +20,6 @@ export class AppComponent {
       this.showSplashScreen = false;
     });
 
-    this.checkTokenExpiration();
+  
   }
-
-  checkTokenExpiration() {
-    const token = localStorage.getItem('jwtToken');
-    if (token) {
-      const decodedToken = jwt_decode(token) as DecodedToken;
-      if (decodedToken.exp < Date.now() / 1000) {
-        localStorage.removeItem('jwtToken');
-      }
-    }
-  }
-}
-
-interface DecodedToken {
-  sub: string;
-  exp: number;
-  iat: number;
 }

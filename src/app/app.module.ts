@@ -31,6 +31,7 @@ import { LanguageSwitcherComponent } from './components/language-switcher/langua
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TabComponent } from './components/tab/tab.component';
+import { GenFormComponent } from './components/gen-form/gen-form.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -45,6 +46,7 @@ export function createTranslateLoader(http: HttpClient) {
     HomeComponent,
     NavbarComponent,
     TabComponent,
+    GenFormComponent,
   ],
   exports: [HomeComponent],
   imports: [

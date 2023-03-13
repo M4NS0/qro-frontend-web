@@ -1,3 +1,5 @@
+
+
 .slide-in {
   animation-name: slide-in;
   animation-duration: 0.5s;
@@ -15,6 +17,14 @@
     transform: translateX(0);
     opacity: 100;
   }
+}
+
+.mat-mdc-card-title {
+  font-family: "Spartan", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(99, 99, 99);
+  cursor: default;
 }
 
 .mat-mdc-form-field {

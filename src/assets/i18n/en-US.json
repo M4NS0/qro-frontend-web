@@ -16,8 +16,8 @@
         
     },
     "tab": {
-        "create": "Create",
-        "dashboard": "Dashboard",
+        "create": "Create QR Code",
+        "dashboard": "Statistics Dashboard",
         "config": "Configurations"
     }
 
