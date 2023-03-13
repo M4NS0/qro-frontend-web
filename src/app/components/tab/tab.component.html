@@ -3,44 +3,37 @@
         <ng-template mat-tab-label>
             <mat-icon matSuffix>create</mat-icon>
         </ng-template>
-        <div class="">
-            <div class="title text-center my-5">{{'tab.create' | translate}} </div>
-            <app-crud-controller></app-crud-controller>
-            <div class="card m-5">
+        <div class="title text-center my-5">{{'tab.create' | translate}} </div>
+        <div class="container">
+            <app-crud-bar></app-crud-bar>
+            <div class="card m-1">
                 <div class="card-body">
                     <app-gen-form></app-gen-form>
                 </div>
             </div>
         </div>
-
     </mat-tab>
-    <mat-tab> 
+    <mat-tab>
         <ng-template mat-tab-label>
             <mat-icon matSuffix>dashboard</mat-icon>
         </ng-template>
-
-        <div class="">
-            <div class="title text-center my-5">{{'tab.dashboard' | translate}} </div>
-            <div class="card m-5">
-                <div class="card-body">
-                    This is some text within a card body.
-                </div>
+        <div class="title text-center my-5">{{'tab.dashboard' | translate}} </div>
+        <div class="card m-5">
+            <div class="card-body">
+                This is some text within a card body.
             </div>
         </div>
-
     </mat-tab>
     <mat-tab>
         <ng-template mat-tab-label>
             <mat-icon matSuffix>settings</mat-icon>
         </ng-template>
-        <div class="">
-            <div class="title text-center my-5">{{'tab.config' | translate}}</div>
-            <div class="card m-5">
-                <div class="card-body">
-                    This is some text within a card body.
-                </div>
+
+        <div class="title text-center my-5">{{'tab.config' | translate}}</div>
+        <div class="card m-5">
+            <div class="card-body">
+                This is some text within a card body.
             </div>
         </div>
-
     </mat-tab>
 </mat-tab-group>

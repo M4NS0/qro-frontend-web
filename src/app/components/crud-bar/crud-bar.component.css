@@ -1,0 +1,20 @@
+
+.card-body {
+    padding: 0px !important;
+}
+
+.icon-position {
+    min-width: 4rem;
+    margin-top: 0.5vh;
+}
+
+.selector-border {
+    border-radius: 0;
+}
+
+.btn {
+    margin: 0;
+    border-radius: 0;
+    padding-inline: 5px;
+    min-width: 4rem;
+}

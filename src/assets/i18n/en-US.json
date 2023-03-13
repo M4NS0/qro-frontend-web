@@ -22,9 +22,35 @@
     "qr-crud": {
         "product-name": "Name",
         "btn-preview": "Preview",
-        "tooltip": {
-            "product-name": "Enter the name of the product or store"
+        "crud-bar": {
+            "dropdown": "Select",
+            "btn-save": "Save",
+            "btn-delete": "Delete",
+            "btn-new": "New"
+        },
+        "gen-form": {
+            "name": "Name", 
+            "advertisement": "Advertisement", 
+            "email": "E-mail", 
+            "homepage": "Home Page", 
+            "whatsapp": "WhatsApp", 
+            "telegram": "Telegram", 
+            "facebook": "Facebook",
+            "instagram": "Instagram", 
+            "youtube": "YouTube", 
+            "voucher": "Voucher" ,
+            "tooltip": {
+                "name": "Enter the name of the product or store",
+                "advertisement": "Insert an eye-catching ad",
+                "email": "Insert an E-mail",
+                "homepage": "Insert a Web Page URL",
+                "whatsapp": "Insert a WhatsApp",
+                "telegram": "Insert a Telegram",
+                "facebook": "Insert a Facebook",
+                "instagram": "Insert an Instagram",
+                "youtube": "Insert a YouTube URL ",
+                "voucher": "Insert a Voucher Link"
+            }
         }
     }
-
 }

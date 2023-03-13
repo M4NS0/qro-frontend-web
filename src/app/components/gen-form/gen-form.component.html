@@ -1,20 +1,16 @@
-
-
 <form [formGroup]="generatorForm">
-    <mat-form-field class="mat-form-field">
-        <mat-label>{{'qr-crud.product-name' | translate }}</mat-label>
-        <input matInput formControlName="name" name="name" required>
-        <mat-icon matSuffix matTooltip="{{ 'qr-crud.tooltip.product-name' | translate }}" matTooltipPosition="left"
-            matTooltipShowDelay="500" class="custom-color">info</mat-icon>
+    <div *ngFor="let key of generatorFormKeys">
+        <mat-form-field appearance="outline">
+            <mat-label>{{'qr-crud.gen-form.'+key | translate }}</mat-label>
+            <small>
+                <input matInput placeholder="{{'qr-crud.gen-form.tooltip.'+ key | translate}}">
+            </small>
+        </mat-form-field>
+    </div>
 
-    </mat-form-field>
-
-    <button mat-raised-button type="submit"
+    <button mat-raised-button type="submit" class="view-button"
         [style.filter]="this.generatorForm.valid && !isLoading ? 'none' : 'saturate(0%)'"
         [style.opacity]="this.generatorForm.valid && !isLoading ? '1' : '0.5'"
         [disabled]="generatorForm.invalid || isLoading" (click)="onSubmit()">{{'qr-crud.btn-preview' |translate }}
-        <span *ngIf="isLoading" class="spinner-border spinner-border-sm pr-3"></span>
     </button>
 </form>
-
-

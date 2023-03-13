@@ -1,0 +1,25 @@
+<div class="card m-1">
+    <div class="card-body">
+        <div class="d-flex">
+            <div class="text-center">
+                <div *ngIf="isQrCreation else qrEdition">
+                    <mat-icon matSuffix class="icon-position border-right">create</mat-icon>
+                </div>
+                <ng-template #qrEdition>
+                    <mat-icon matSuffix class="icon-position border-right">create</mat-icon>
+                </ng-template>
+                
+            </div>
+           
+            <select class="form-select form-select-sm selector-border">
+                <option selected>{{'qr-crud.crud-bar.dropdown' | translate}}</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+
+            <button class="btn">{{'qr-crud.crud-bar.btn-new' | translate}}</button>
+        </div>
+
+    </div>
+</div>

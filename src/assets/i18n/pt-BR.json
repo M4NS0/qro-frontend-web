@@ -20,10 +20,36 @@
         "config": "Configurações"
     },
     "qr-crud": {
-        "product-name": "Nome",
         "btn-preview": "Visualizar",
-        "tooltip": {
-            "product-name": "Digite o nome do Produto ou nome da Loja"
+        "crud-bar": {
+            "dropdown": "Selecione",
+            "btn-save": "Salvar",
+            "btn-delete": "Deletar",
+            "btn-new": "Novo"
+        },
+        "gen-form": {
+            "name": "Nome",
+            "advertisement": "Anúncio",
+            "email": "E-mail",
+            "homepage": "Página Web",
+            "whatsapp": "WhatsApp",
+            "telegram": "Telegram",
+            "facebook": "Facebook",
+            "instagram": "Instagram",
+            "youtube": "YouTube",
+            "voucher": "Voucher",
+            "tooltip": {
+                "name": "Digite o nome do Produto ou Loja",
+                "advertisement": "Insira um anúncio chamativo",
+                "email": "Insira um E-mail",
+                "homepage": "Insira uma Página Web",
+                "whatsapp": "Insira o WhatsApp",
+                "telegram": "Insira o Telegram",
+                "facebook": "Insira o Facebook",
+                "instagram": "Insira o Instagram",
+                "youtube": "Insira o Canal de YouTube",
+                "voucher": "Insira um link para um Voucher"
+            }
         }
     }
 }

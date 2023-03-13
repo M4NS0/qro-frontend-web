@@ -7,10 +7,10 @@
 }
 
 .card {
+    margin-block: 1vh  !important;
     box-shadow: 0px 1px 17px -8px rgba(0,0,0,0.65);
-
-
 }
+
 
 .mdc-tab-indicator .mdc-tab-indicator__content {
     border-color: #FFAE00 !important;
@@ -28,14 +28,4 @@
     overflow: hidden !important;
 }
 
-@media screen and (min-width: 481px) and (max-width: 1023px) {
-    .card {
-        margin: 5vw 15vw 5vw 15vw !important;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .card {
-        margin: 5vw 15vw 5vw 15vw !important;
-    }
-}
+  
