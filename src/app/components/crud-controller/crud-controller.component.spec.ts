@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GenFormComponent } from './gen-form.component';
+import { CrudControllerComponent } from './crud-controller.component';
 
-describe('GenFormComponent', () => {
-  let component: GenFormComponent;
-  let fixture: ComponentFixture<GenFormComponent>;
+describe('CrudControllerComponent', () => {
+  let component: CrudControllerComponent;
+  let fixture: ComponentFixture<CrudControllerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GenFormComponent ]
+      declarations: [ CrudControllerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GenFormComponent);
+    fixture = TestBed.createComponent(CrudControllerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

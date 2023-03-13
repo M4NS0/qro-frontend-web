@@ -15,8 +15,15 @@
         "not-registered": "Ainda não cadastrado?"
     },
     "tab": {
-        "create": "Criar código QR",
+        "create": "Crie e Edite seus códigos QR",
         "dashboard": "Painel de Estatísticas",
         "config": "Configurações"
+    },
+    "qr-crud": {
+        "product-name": "Nome",
+        "btn-preview": "Visualizar",
+        "tooltip": {
+            "product-name": "Digite o nome do Produto ou nome da Loja"
+        }
     }
 }

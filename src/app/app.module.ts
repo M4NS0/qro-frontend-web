@@ -19,7 +19,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { NgxSpinnerModule } from 'ngx-spinner';
 
@@ -32,6 +32,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TabComponent } from './components/tab/tab.component';
 import { GenFormComponent } from './components/gen-form/gen-form.component';
+import { CrudControllerComponent } from './components/crud-controller/crud-controller.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -47,6 +48,7 @@ export function createTranslateLoader(http: HttpClient) {
     NavbarComponent,
     TabComponent,
     GenFormComponent,
+    CrudControllerComponent,
   ],
   exports: [HomeComponent],
   imports: [
@@ -73,6 +75,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatDividerModule,
     MatToolbarModule,
     MatTabsModule,
+    MatTooltipModule,
     CommonModule,
     FormsModule,
   ],
