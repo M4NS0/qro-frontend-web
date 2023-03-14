@@ -3,9 +3,11 @@
         <mat-form-field appearance="outline">
             <mat-label>{{'qr-crud.gen-form.'+key | translate }}</mat-label>
             <small>
-                <input matInput placeholder="{{'qr-crud.gen-form.tooltip.'+ key | translate}}">
+                <input [value]="generatorForm.get(key)?.value" matInput placeholder="{{'qr-crud.gen-form.tooltip.'+ key | translate}}">
             </small>
+            
         </mat-form-field>
+        <!-- {{selectedProduct[0]| json}} -->
     </div>
 
     <button mat-raised-button type="submit" class="view-button"

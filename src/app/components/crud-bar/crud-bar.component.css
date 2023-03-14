@@ -18,3 +18,15 @@
     padding-inline: 5px;
     min-width: 4rem;
 }
+
+.mat-form-field-underline {
+    display: none;
+    width: 0 !important;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+    width: 100%;
+    padding: 0 !important;
+    display: none;
+}
+

@@ -25,8 +25,6 @@ export class LoadingGuard implements CanActivate {
     const token = localStorage.getItem('jwtToken');
     if (token) {
       const decodedToken = jwt_decode(token) as DecodedToken;
-      console.log(decodedToken.exp + " -- " + Date.now() / 1000);
-      
       if (decodedToken.exp < Date.now() / 1000) {
         localStorage.removeItem('jwtToken');
       }

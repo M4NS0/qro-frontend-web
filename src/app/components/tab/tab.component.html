@@ -5,10 +5,10 @@
         </ng-template>
         <div class="title text-center my-5">{{'tab.create' | translate}} </div>
         <div class="container">
-            <app-crud-bar></app-crud-bar>
+            <app-crud-bar (productChangeEvent)="newSelection($event)"></app-crud-bar>
             <div class="card m-1">
                 <div class="card-body">
-                    <app-gen-form></app-gen-form>
+                    <app-gen-form [selectedProduct]="selectedProduct" ></app-gen-form>
                 </div>
             </div>
         </div>

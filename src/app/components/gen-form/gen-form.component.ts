@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-gen-form',
   templateUrl: './gen-form.component.html',
   styleUrls: ['./gen-form.component.css']
 })
-export class GenFormComponent implements OnInit {
-
+export class GenFormComponent implements OnInit, OnChanges {
+  @Input() selectedProduct: Product[] = [];
   generatorForm!: FormGroup;
   generatorFormKeys: any;
   isLoading: boolean = false;
-  inputFieldTypes = [];
 
 
   constructor(private formBuilder: UntypedFormBuilder) { 
@@ -34,9 +34,13 @@ export class GenFormComponent implements OnInit {
   ngOnInit(): void {
     
   }
- 
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['selectedProduct']) {
+      this.generatorForm.patchValue(this.selectedProduct[0]);
+    }
+  }
 
   onSubmit() {
   }
-
 }
